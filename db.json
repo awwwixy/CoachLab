@@ -1,0 +1,141 @@
+{
+  "course": {
+    "id": "fitness-start",
+    "title": "Фітнес-старт: тренування з нуля",
+    "price": 1499,
+    "currency": "₴",
+    "description": "Покроковий курс для початківців: техніка, харчування, відновлення та готові програми тренувань."
+  },
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Урок 1. Вступ: як працює твоє тіло",
+      "description": "Знайомство з курсом. Як влаштовані м'язи, що таке прогресія навантаження та з чого почати новачку.",
+      "image": "images/lesson-1.svg",
+      "video": "https://drive.google.com/file/d/1RNAmMY2zwuz6m50uxS4paVSc8bgEPS_M/preview",
+      "free": true
+    },
+    {
+      "id": 2,
+      "title": "Урок 2. Основи харчування",
+      "description": "Білки, жири, вуглеводи простими словами. Скільки їсти та як рахувати калорії без фанатизму.",
+      "image": "images/lesson-2.svg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "free": false
+    },
+    {
+      "id": 3,
+      "title": "Урок 3. Розминка і техніка безпеки",
+      "description": "Правильна розминка, дихання та найпоширеніші помилки, через які трапляються травми.",
+      "image": "images/lesson-3.svg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "free": false
+    },
+    {
+      "id": 4,
+      "title": "Урок 4. Програма для початківців",
+      "description": "Готова програма на перші 4 тижні. Які вправи робити, скільки підходів і повторень.",
+      "image": "images/lesson-4.svg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "free": false
+    },
+    {
+      "id": 5,
+      "title": "Урок 5. Силові тренування",
+      "description": "Базові вправи зі штангою і гантелями. Як збільшувати вагу безпечно та не зупинятися в прогресі.",
+      "image": "images/lesson-5.svg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "free": false
+    },
+    {
+      "id": 6,
+      "title": "Урок 6. Відновлення і сон",
+      "description": "Чому відпочинок важливіший за тренування. Розтяжка, сон та профілактика перетренованості.",
+      "image": "images/lesson-6.svg",
+      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "free": false
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Демо Користувач",
+      "email": "demo@coachlab.ua",
+      "password": "1234",
+      "paid": false,
+      "progress": {},
+      "answers": {
+        "goal": "",
+        "plan": ""
+      },
+      "notifications": [
+        {
+          "id": 1,
+          "text": "Ласкаво просимо до CoachLab! Перший урок доступний безкоштовно.",
+          "type": "welcome",
+          "read": false,
+          "date": "2026-01-10"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "111",
+      "email": "111",
+      "password": "111111111111111",
+      "paid": true,
+      "progress": {
+        "4": false
+      },
+      "answers": {
+        "goal": "ddc",
+        "plan": "ss"
+      },
+      "notifications": [
+        {
+          "id": 1781540212414,
+          "text": "\"Урок 4. Програма для початківців\" — урок виконано. Так тримати!",
+          "type": "progress",
+          "read": true,
+          "date": "2026-06-15"
+        },
+        {
+          "id": 1781540150421,
+          "text": "Доступ до курсу відкрито. Усі уроки розблоковані!",
+          "type": "access",
+          "read": true,
+          "date": "2026-06-15"
+        },
+        {
+          "id": 1781540069234,
+          "text": "Ласкаво просимо до CoachLab! Перший урок доступний безкоштовно.",
+          "type": "welcome",
+          "read": true,
+          "date": "2026-06-15"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "di",
+      "email": "demo@coachlab.uaa",
+      "password": "1234",
+      "paid": false,
+      "progress": {},
+      "answers": {
+        "goal": "",
+        "plan": ""
+      },
+      "notifications": [
+        {
+          "id": 1781547889494,
+          "text": "Ласкаво просимо до CoachLab! Перший урок доступний безкоштовно.",
+          "type": "welcome",
+          "read": true,
+          "date": "2026-06-15"
+        }
+      ]
+    }
+  ],
+  "nextUserId": 4
+}
