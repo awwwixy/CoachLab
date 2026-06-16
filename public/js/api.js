@@ -1,5 +1,3 @@
-// Лаб 8: проксі автентифікації — обгортка над fetch, що підставляє
-// токен поточної сесії у заголовок Authorization перед кожним запитом.
 function createAuthProxy(requestFn, getToken) {
   return function (url, options = {}) {
     const token = getToken();
