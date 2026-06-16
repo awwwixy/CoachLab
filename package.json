@@ -4,9 +4,10 @@
   "description": "CoachLab — навчальна онлайн-платформа тренера (курсова робота)",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "demo": "node examples/demo.js"
   },
-  "author": "",
+  "author": "Viktoriia Slyviuk",
   "license": "MIT",
   "dependencies": {
     "express": "^4.22.2"
