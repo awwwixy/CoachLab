@@ -11,48 +11,48 @@
       "id": 1,
       "title": "Урок 1. Вступ: як працює твоє тіло",
       "description": "Знайомство з курсом. Як влаштовані м'язи, що таке прогресія навантаження та з чого почати новачку.",
-      "image": "images/lesson-1.svg",
-      "video": "https://drive.google.com/file/d/1RNAmMY2zwuz6m50uxS4paVSc8bgEPS_M/preview",
+      "image": "images/lesson-1.jpg",
+      "video": "https://drive.google.com/file/d/1oM9XWxRlte-TzUMdMHbH4Q1djhrNNc8a/preview",
       "free": true
     },
     {
       "id": 2,
       "title": "Урок 2. Основи харчування",
       "description": "Білки, жири, вуглеводи простими словами. Скільки їсти та як рахувати калорії без фанатизму.",
-      "image": "images/lesson-2.svg",
-      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "image": "images/lesson-2.jpg",
+      "video": "https://drive.google.com/file/d/1ZozFAOJn9VZPQyT2WRr4P3nyYiA6UCqk/preview",
       "free": false
     },
     {
       "id": 3,
       "title": "Урок 3. Розминка і техніка безпеки",
       "description": "Правильна розминка, дихання та найпоширеніші помилки, через які трапляються травми.",
-      "image": "images/lesson-3.svg",
-      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "image": "images/lesson-3.jpg",
+      "video": "https://drive.google.com/file/d/1rmfbSP81n2RcmKJSSKNNga0rWRN8cw1b/preview",
       "free": false
     },
     {
       "id": 4,
       "title": "Урок 4. Програма для початківців",
       "description": "Готова програма на перші 4 тижні. Які вправи робити, скільки підходів і повторень.",
-      "image": "images/lesson-4.svg",
-      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "image": "images/lesson-4.jpg",
+      "video": "https://drive.google.com/file/d/15Ucjl7YYwKpZQv7KVepc2ljHKN9QPkxM/preview",
       "free": false
     },
     {
       "id": 5,
       "title": "Урок 5. Силові тренування",
       "description": "Базові вправи зі штангою і гантелями. Як збільшувати вагу безпечно та не зупинятися в прогресі.",
-      "image": "images/lesson-5.svg",
-      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "image": "images/lesson-5.jpg",
+      "video": "https://drive.google.com/file/d/1G_YDFLilARZSnFRyhx6m_7VXI2qjpTAl/preview",
       "free": false
     },
     {
       "id": 6,
       "title": "Урок 6. Відновлення і сон",
       "description": "Чому відпочинок важливіший за тренування. Розтяжка, сон та профілактика перетренованості.",
-      "image": "images/lesson-6.svg",
-      "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "image": "images/lesson-6.jpg",
+      "video": "https://drive.google.com/file/d/10afsUDojzSX1lgx9eeZJJIAKwIxKdqE2/preview",
       "free": false
     }
   ],
@@ -120,13 +120,69 @@
       "name": "di",
       "email": "demo@coachlab.uaa",
       "password": "1234",
-      "paid": false,
-      "progress": {},
+      "paid": true,
+      "progress": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true,
+        "6": true
+      },
       "answers": {
-        "goal": "",
+        "goal": "схуднути на 5 кг",
         "plan": ""
       },
       "notifications": [
+        {
+          "id": 1781568415990,
+          "text": "\"Урок 6. Відновлення і сон\" — урок виконано. Так тримати!",
+          "type": "progress",
+          "read": true,
+          "date": "2026-06-16"
+        },
+        {
+          "id": 1781568414755,
+          "text": "\"Урок 5. Силові тренування\" — урок виконано. Так тримати!",
+          "type": "progress",
+          "read": true,
+          "date": "2026-06-16"
+        },
+        {
+          "id": 1781568412607,
+          "text": "\"Урок 4. Програма для початківців\" — урок виконано. Так тримати!",
+          "type": "progress",
+          "read": true,
+          "date": "2026-06-16"
+        },
+        {
+          "id": 1781568411274,
+          "text": "\"Урок 3. Розминка і техніка безпеки\" — урок виконано. Так тримати!",
+          "type": "progress",
+          "read": true,
+          "date": "2026-06-16"
+        },
+        {
+          "id": 1781568408224,
+          "text": "\"Урок 2. Основи харчування\" — урок виконано. Так тримати!",
+          "type": "progress",
+          "read": true,
+          "date": "2026-06-16"
+        },
+        {
+          "id": 1781563853875,
+          "text": "\"Урок 1. Вступ: як працює твоє тіло\" — урок виконано. Так тримати!",
+          "type": "progress",
+          "read": true,
+          "date": "2026-06-15"
+        },
+        {
+          "id": 1781563841276,
+          "text": "Доступ до курсу відкрито. Усі уроки розблоковані!",
+          "type": "access",
+          "read": true,
+          "date": "2026-06-15"
+        },
         {
           "id": 1781547889494,
           "text": "Ласкаво просимо до CoachLab! Перший урок доступний безкоштовно.",
