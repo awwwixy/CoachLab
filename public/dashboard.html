@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кабінет — CoachLab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <a class="brand" href="dashboard.html"><span class="dot"></span>Coach<span>Lab</span></a>
+
+      <div class="top-tools">
+
+        <button class="icon-btn" id="bellBtn" title="Сповіщення">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="badge" id="notifBadge" hidden>0</span>
+        </button>
+
+        <button class="icon-btn" id="profileBtn" title="Профіль">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="dropdown" id="notifDropdown" hidden>
+      <h4>Сповіщення</h4>
+      <div class="notif-list" id="notifList"></div>
+    </div>
+
+    <div class="dropdown" id="profileDropdown" hidden>
+      <div class="menu-info">
+        <div class="name" id="menuName">—</div>
+        <div class="email" id="menuEmail">—</div>
+      </div>
+      <div class="menu-item" id="logoutBtn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Вийти
+      </div>
+    </div>
+  </header>
+
+  <main class="dash">
+    <div class="container">
+
+      <div class="welcome">
+        <h1>Привіт, <span id="userName">друже</span>! 👋</h1>
+        <p>Раді бачити тебе знову. Продовжуй там, де зупинився.</p>
+      </div>
+
+      <div class="dash-grid">
+
+        <div class="dash-main">
+
+          <h2 class="section-title">Уроки курсу</h2>
+          <div class="lessons" id="lessonsGrid"></div>
+
+          <section class="tasks">
+            <h2 class="section-title">Завдання</h2>
+
+            <div class="task-card">
+              <h4>Завдання 1. Мета курсу</h4>
+              <p class="desc">Напиши, якого результату ти хочеш досягти за цей курс. Це твій орієнтир.</p>
+              <textarea id="answerGoal" placeholder="Наприклад: схуднути на 5 кг і навчитися правильно присідати..."></textarea>
+              <div class="save-row">
+                <button class="btn btn-primary" data-task="goal">Зберегти відповідь</button>
+                <span class="saved-note" data-note="goal">Збережено ✓</span>
+              </div>
+            </div>
+
+            <div class="task-card">
+              <h4>Завдання 2. План тренувань на 7 днів</h4>
+              <p class="desc">Розпиши, що ти робитимеш кожного дня тижня (тренування, відпочинок, кардіо).</p>
+              <textarea id="answerPlan" placeholder="Пн — ноги, Вт — відпочинок, Ср — спина..."></textarea>
+              <div class="save-row">
+                <button class="btn btn-primary" data-task="plan">Зберегти відповідь</button>
+                <span class="saved-note" data-note="plan">Збережено ✓</span>
+              </div>
+            </div>
+
+            <div class="task-card">
+              <h4>Завдання 3. Відмічай виконані уроки</h4>
+              <p class="desc">Постав галочку «Виконано» на кожному уроці після перегляду. Прогрес оновиться автоматично.</p>
+            </div>
+          </section>
+
+        </div>
+
+        <aside class="dash-side">
+
+          <div class="progress-card">
+            <h3>Твій прогрес</h3>
+            <div class="ring-wrap">
+              <div class="ring">
+                <svg width="120" height="120">
+                  <circle class="track" cx="60" cy="60" r="54"></circle>
+                  <circle class="bar" id="progressBar" cx="60" cy="60" r="54"></circle>
+                </svg>
+                <div class="pct" id="progressPct">0%</div>
+              </div>
+              <div class="progress-meta">
+                <div class="big" id="progressCount">0 / 0</div>
+                <div class="small">уроків виконано</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="payZone" style="margin-top:18px;"></div>
+
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="payModal" hidden>
+    <div class="modal">
+      <div class="modal-head">
+        <h3>Оплата курсу</h3>
+        <button class="modal-close" data-close="payModal">×</button>
+      </div>
+      <div class="modal-body" id="payModalBody">
+
+        <div class="pay-summary">
+          <div>
+            <div class="label">Курс</div>
+            <div id="payCourseName">—</div>
+          </div>
+          <div class="total" id="payTotal">—</div>
+        </div>
+
+        <div class="field">
+          <label for="cardNumber">Номер картки</label>
+          <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" inputmode="numeric" />
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <label for="cardExp">Термін дії</label>
+            <input type="text" id="cardExp" placeholder="ММ/РР" maxlength="5" inputmode="numeric" />
+          </div>
+          <div class="field">
+            <label for="cardCvv">CVV</label>
+            <input type="password" id="cardCvv" placeholder="•••" maxlength="3" inputmode="numeric" />
+          </div>
+        </div>
+
+        <div class="form-msg" id="payMsg"></div>
+        <button class="btn btn-primary btn-block" id="payConfirmBtn">Оплатити</button>
+        <p class="hint">Це навчальна симуляція. Реальні гроші не списуються.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="videoModal" hidden>
+    <div class="modal wide">
+      <div class="modal-head">
+        <h3 id="videoTitle">Урок</h3>
+        <button class="modal-close" data-close="videoModal">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="video-frame" id="videoFrame"></div>
+        <p class="video-desc" id="videoDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
