@@ -1,0 +1,9 @@
+# Залежності (встановлюються через npm install)
+node_modules/
+
+# Системні файли macOS
+.DS_Store
+
+# Логи
+*.log
+npm-debug.log*
