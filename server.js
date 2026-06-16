@@ -16,16 +16,13 @@ const DB_PATH = path.join(__dirname, "db.json");
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-// Лаб 7: шина подій. Два незалежні слухачі реагують на одну подію.
 const bus = new EventBus();
 setLevel("INFO");
 bus.on("course:paid", (p) => console.log(`[подія] користувач #${p.userId} оплатив курс`));
 bus.on("lesson:done", (p) => console.log(`[подія] користувач #${p.userId} виконав урок ${p.lessonId}`));
 
-// Лаб 1: генератор унікальних id для сповіщень (нескінченний лічильник)
 const notifIdGen = incrementalCounter(Date.now());
 
-// Лаб 9: читання/запис бази обгорнуті логуючим декоратором (рівень DEBUG)
 const readDB = log(function readDB() {
   return JSON.parse(fs.readFileSync(DB_PATH, "utf-8"));
 }, { level: "DEBUG", name: "readDB" });
@@ -34,13 +31,11 @@ const writeDB = log(function writeDB(db) {
   fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2), "utf-8");
 }, { level: "DEBUG", name: "writeDB" });
 
-// Лаб 3: мемоізована чиста функція — статистика курсу (кеш із TTL 5с)
 const courseStats = memoize(
   (lessons) => ({ total: lessons.length, free: lessons.filter((l) => l.free).length }),
   { policy: "TTL", ttl: 5000, maxSize: 10 }
 );
 
-// Лаб 4: впорядкування сповіщень за пріоритетом типу (важливі — вище)
 const TYPE_PRIORITY = { access: 3, progress: 2, welcome: 1, info: 0 };
 function orderNotifications(notifs) {
   const pq = new BiPriorityQueue();
@@ -131,20 +126,19 @@ app.get("/api/state/:id", async (req, res) => {
   const user = findUser(db, req.params.id);
   if (!user) return res.status(404).json({ error: "Користувача не знайдено." });
 
-  // Лаб 5: async-map будує список уроків із позначкою доступності
   const lessons = await asyncMap(db.lessons, async (l) => ({
     ...l,
     unlocked: l.free || user.paid,
   }));
 
   const safe = safeUser(user);
-  safe.notifications = orderNotifications(safe.notifications); // Лаб 4
+  safe.notifications = orderNotifications(safe.notifications);
 
   res.json({
     user: safe,
     course: db.course,
     lessons: lessons,
-    stats: courseStats(db.lessons), // Лаб 3
+    stats: courseStats(db.lessons),
   });
 });
 
@@ -158,7 +152,7 @@ app.post("/api/pay", (req, res) => {
   addNotification(user, "Доступ до курсу відкрито. Усі уроки розблоковані!", "access");
   writeDB(db);
 
-  bus.emit("course:paid", { userId: user.id }); // Лаб 7
+  bus.emit("course:paid", { userId: user.id });
   res.json({ user: safeUser(user) });
 });
 
@@ -174,7 +168,7 @@ app.post("/api/progress", (req, res) => {
     const lesson = db.lessons.find((l) => l.id === Number(lessonId));
     const title = lesson ? lesson.title : "Урок";
     addNotification(user, '"' + title + '" — урок виконано. Так тримати!', "progress");
-    bus.emit("lesson:done", { userId: user.id, lessonId }); // Лаб 7
+    bus.emit("lesson:done", { userId: user.id, lessonId });
   }
 
   writeDB(db);
