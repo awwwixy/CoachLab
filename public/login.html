@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Вхід — CoachLab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <a class="brand" href="index.html"><span class="dot"></span>Coach<span>Lab</span></a>
+      <a class="btn btn-ghost" href="index.html">На головну</a>
+    </div>
+  </header>
+
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <h2 id="formTitle">Вхід в акаунт</h2>
+      <p class="sub" id="formSub">Увійди, щоб продовжити навчання.</p>
+
+      <div class="tabs">
+        <button id="tabLogin" class="active">Вхід</button>
+        <button id="tabRegister">Реєстрація</button>
+      </div>
+
+      <div class="field" id="nameField" hidden>
+        <label for="name">Ім'я</label>
+        <input type="text" id="name" placeholder="Як до тебе звертатися?" />
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" />
+      </div>
+
+      <div class="field">
+        <label for="password">Пароль</label>
+        <input type="password" id="password" placeholder="••••••••" />
+      </div>
+
+      <div class="form-msg" id="msg"></div>
+
+      <button class="btn btn-primary btn-block" id="submitBtn">Увійти</button>
+
+      <p class="hint">Демо-акаунт для перевірки: <b>demo@coachlab.ua</b> / <b>1234</b></p>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
